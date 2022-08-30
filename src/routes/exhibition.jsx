@@ -56,7 +56,7 @@ const Exhibition = () => {
             </div>
 
             <div className="container pt-16 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                {/* <HorizontalScroll className="conti" style={{ height: "initial" }}> */}
+                <HorizontalScroll className="conti" style={{ height: "initial" }}>
                     
                     <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden">
                         <motion.h1 initial="initial" animate="animate" exit="initial" variants={title} className="text-7xl flex font-bold uppercase overflow-hidden">
@@ -86,7 +86,7 @@ const Exhibition = () => {
                         </div>
                     </div>
 
-                    <div className="w-full  xl:w-1/2 h-auto py-6 flex relative overflow-hidden">
+                    <div className="w-full  xl:w-1/2 h-auto py-6 flex relative ">
                         <motion.div className="overflow-hidden"
                             initial="initial"
                             animate={{ width: 300 }}
@@ -106,8 +106,10 @@ const Exhibition = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={transition} />
+                        {/* <img className="absolute max-w-lg left-144" src={photo} alt="" />
+                        <img className="max-w-lg" src={web} alt="" /> */}
                     </div>
-                {/* </HorizontalScroll> */}
+                </HorizontalScroll>
             </div>
         </div >
     );
