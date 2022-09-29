@@ -1,11 +1,5 @@
-import React, { useRef, useState, useLayoutEffect, useCallback } from "react";
-import ResizeObserver from "resize-observer-polyfill";
-import {
-    motion,
-    useViewportScroll,
-    useTransform,
-    useSpring
-} from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import mock from '../assets/mock.jpeg';
 import mask from '../assets/mask.jpeg';
@@ -55,10 +49,10 @@ const Exhibition = () => {
                 </div>
             </div>
 
-            <div className="container pt-16 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <div className="container pt-16 px-6 mx-auto flex flex-wrap justify-center flex-col md:flex-row items-center" style={{ maxWidth: "67rem" }}>
                 <HorizontalScroll className="conti" style={{ height: "initial" }}>
-                    
-                    <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden">
+
+                    <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden" style={{ maxWidth: "30rem" }}>
                         <motion.h1 initial="initial" animate="animate" exit="initial" variants={title} className="text-7xl flex font-bold uppercase overflow-hidden">
                             <motion.div variants={letter}>P</motion.div>
                             <motion.div variants={letter}>l</motion.div>
@@ -87,27 +81,29 @@ const Exhibition = () => {
                     </div>
 
                     <div className="w-full  xl:w-1/2 h-auto py-6 flex relative ">
-                        <motion.div className="overflow-hidden"
-                            initial="initial"
-                            animate={{ width: 300 }}
-                            exit={{ width: 512 }}
-                            transition={transition}
-                        >
-                            <motion.img className="max-w-lg" src={mock} alt=""
+                        <div className="flex">
+                            <motion.div className="overflow-hidden"
                                 initial="initial"
-                                animate={{ scale: 1.3 }}
-                                exit={{ scale: 1 }}
+                                animate={{ width: 300 }}
+                                exit={{ width: 512 }}
                                 transition={transition}
-                            />
+                            >
+                                <motion.img className="max-w-lg" src={mock} alt=""
+                                    initial="initial"
+                                    animate={{ scale: 1.3 }}
+                                    exit={{ scale: 1 }}
+                                    transition={transition}
+                                />
+                            </motion.div>
 
-                        </motion.div>
-                        <motion.img className="absolute max-w-lg ml-6 left-128" src={mask} alt=""
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={transition} />
-                        {/* <img className="absolute max-w-lg left-144" src={photo} alt="" />
-                        <img className="max-w-lg" src={web} alt="" /> */}
+                            <motion.img className="max-w-lg ml-6" src={mask} alt=""
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={transition} />
+                            <img className="max-w-lg ml-6" src={photo} alt="" />
+                            <img className="max-w-lg ml-6" src={web} alt="" />
+                        </div>
                     </div>
                 </HorizontalScroll>
             </div>

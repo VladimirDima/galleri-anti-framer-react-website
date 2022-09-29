@@ -24,8 +24,9 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="container pt-16 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden">
+            <div className="container pt-16 px-6 mx-auto justify-center flex flex-wrap flex-col md:flex-row items-center" style={{ maxWidth: "67rem" }}>
+                <div className="flex w-full">
+                <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden" style={{ maxWidth: "30rem" }}> 
                     <motion.ul className="flex flex-col w-full justify-center items-start text-center md:text-left"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -53,13 +54,16 @@ const Home = () => {
                     </motion.ul>
                 </div>
 
-                <div className="w-full xl:w-1/2 py-6 overflow-y-hidden">
-                    <motion.img className="max-w-lg" src={mock} alt="" />
+                <div className="w-full xl:w-1/2 py-6">
+                    <div className="overflow-hidden" style={{ height: "592px" }}>
+                        <motion.img className="max-w-lg" src={mock} alt="" />
+                    </div>  
+                </div>
                 </div>
 
-                <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+                {/* <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
                     <a className="text-gray-500 no-underline hover:no-underline" href="#">&copy; App 2019</a>
-                </div>
+                </div> */}
             </div>
         </div>
     );
