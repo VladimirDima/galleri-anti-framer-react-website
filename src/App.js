@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Exhibition from './routes/exhibition';
 import NeedForStreet from './routes/needForStreet';
+import Blood from './routes/blood';
 import About from './routes/about';
 import Home from './routes/home';
 import Contact from './routes/contact';
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="needForStreet" element={<NeedForStreet />} />
         <Route path="exhibition" element={<Exhibition />} />
+        <Route path="blood" element={<Blood />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
       </Routes>

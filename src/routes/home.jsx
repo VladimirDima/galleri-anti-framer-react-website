@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import mock from '../assets/mock.jpeg';
+import needForStreet from '../assets/images/needForStreet/banner.jpeg';
+import mock from '../assets/images/mock.jpeg';
+import blood from '../assets/images/blood/thatscool.jpeg'
 
-const transition = { duration: 1, ease: [.6, .01, -0.05, 0.9] }
 const hoverTransition = { duration: 0.5, ease: [.6, .01, -0.05, 0.9] }
 
 const Home = () => {
+    const [isHovered, setHovered] = useState(mock);
+
     return (
         <div className="h-screen pb-14 bg-right bg-cover">
             <div className="w-full container mx-auto p-6">
@@ -26,44 +30,52 @@ const Home = () => {
 
             <div className="container pt-16 px-6 mx-auto justify-center flex flex-wrap flex-col md:flex-row items-center" style={{ maxWidth: "67rem" }}>
                 <div className="flex w-full">
-                <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden" style={{ maxWidth: "30rem" }}> 
-                    <motion.ul className="flex flex-col w-full justify-center items-start text-center md:text-left"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}>
-                        <h4 className="text-2xl font-light uppercase"> Past exhibitions</h4>
-                        <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
-                            <Link className="text-5xl font-bold pl-8 uppercase" to="/needForStreet" >Need For Street</Link>
-                        </motion.li>
-                        <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
-                            <Link className="text-5xl font-bold pl-8 uppercase" to="/exhibition" >Plastic</Link>
-                        </motion.li>
-                        <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
-                            <Link className="text-5xl font-bold pl-8 uppercase" to="/about">Blood</Link>
-                        </motion.li>
-                        <h4 className="text-2xl font-light uppercase"> About us</h4>
-                        <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
-                            <Link className="text-5xl font-bold pl-8 uppercase" to="/exhibition" >Our manifesto</Link>
-                        </motion.li>
-                        <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
-                            <Link className="text-5xl font-bold pl-8 uppercase" to="/about">Magazine</Link>
-                        </motion.li>
-                        <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
-                            <Link className="text-5xl font-bold pl-8 uppercase" to="/contact">Contact</Link>
-                        </motion.li>
-                    </motion.ul>
-                </div>
+                    <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden" style={{ maxWidth: "30rem" }}>
+                        <motion.ul className="flex flex-col w-full justify-center items-start text-center md:text-left"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}>
+                            <h4 className="text-2xl font-light uppercase"> Past exhibitions</h4>
+                            <motion.li 
+                                whileHover={{ skewY: 3 }}
+                                onMouseEnter={() => setHovered(needForStreet)} 
+                                onMouseLeave={() => setHovered(mock)} 
+                                transition={hoverTransition} >
+                                <Link className="text-5xl font-bold pl-8 uppercase" to="/needForStreet" >Need For Street</Link>
+                            </motion.li>
+                            <motion.li 
+                                whileHover={{ skewY: 3 }}
+                                onMouseEnter={() => setHovered(mock)} 
+                                onMouseLeave={() => setHovered(mock)} 
+                                transition={hoverTransition}>
+                                <Link className="text-5xl font-bold pl-8 uppercase" to="/exhibition" >Plastic</Link>
+                            </motion.li>
+                            <motion.li 
+                                whileHover={{ skewY: 3 }}
+                                onMouseEnter={() => setHovered(blood)} 
+                                onMouseLeave={() => setHovered(mock)} 
+                                transition={hoverTransition}>
+                                <Link className="text-5xl font-bold pl-8 uppercase" to="/blood">Blood</Link>
+                            </motion.li>
+                            <h4 className="text-2xl font-light uppercase"> About us</h4>
+                            <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
+                                <Link className="text-5xl font-bold pl-8 uppercase" to="/exhibition" >Our manifesto</Link>
+                            </motion.li>
+                            <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
+                                <Link className="text-5xl font-bold pl-8 uppercase" to="/about">Magazine</Link>
+                            </motion.li>
+                            <motion.li whileHover={{ skewY: 3 }} transition={hoverTransition}>
+                                <Link className="text-5xl font-bold pl-8 uppercase" to="/contact">Contact</Link>
+                            </motion.li>
+                        </motion.ul>
+                    </div>
 
-                <div className="w-full xl:w-1/2 py-6">
-                    <div className="overflow-hidden" style={{ height: "592px" }}>
-                        <motion.img className="max-w-lg" src={mock} alt="" />
-                    </div>  
+                    <div className="w-full xl:w-1/2 py-6">
+                        <div className="overflow-hidden" style={{ height: "592px" }}>
+                            <motion.img className="max-w-lg" src={isHovered} alt="" />
+                        </div>
+                    </div>
                 </div>
-                </div>
-
-                {/* <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
-                    <a className="text-gray-500 no-underline hover:no-underline" href="#">&copy; App 2019</a>
-                </div> */}
             </div>
         </div>
     );

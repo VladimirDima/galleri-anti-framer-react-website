@@ -1,10 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import mock from '../assets/images/mock.jpeg';
-import mask from '../assets/images/mask.jpeg';
-import photo from '../assets/images/photo.jpeg';
-import web from '../assets/images/web.jpeg';
 
 import HorizontalScroll from "react-scroll-horizontal";
 
@@ -37,9 +33,9 @@ const importAll = (r) => {
     return images;
 }
 
-const images = importAll(require.context('../assets/images/needForStreet', false, /\.jpeg/));
+const images = importAll(require.context('../assets/images/blood', false, /\.jpeg/));
 
-const needForStreet = () => {
+const blood = () => {
     return (
         <div className="h-screen pb-14 bg-right bg-cover">
             <div className="w-full container mx-auto p-6">
@@ -63,19 +59,11 @@ const needForStreet = () => {
 
                     <div className="flex flex-col w-full xl:w-1/2 justify-center lg:items-start overflow-y-hidden" style={{ maxWidth: "30rem" }}>
                         <motion.h1 initial="initial" animate="animate" exit="initial" variants={title} className="text-7xl flex font-bold uppercase overflow-hidden">
-                            <motion.div variants={letter}>N</motion.div>
-                            <motion.div variants={letter}>E</motion.div>
-                            <motion.div variants={letter}>E</motion.div>
-                            <motion.div variants={letter}>D</motion.div>
-                            <motion.div variants={letter}>F</motion.div>
+                            <motion.div variants={letter}>B</motion.div>
+                            <motion.div variants={letter}>L</motion.div>
                             <motion.div variants={letter}>O</motion.div>
-                            <motion.div variants={letter}>R</motion.div>
-                            <motion.div variants={letter}>S</motion.div>
-                            <motion.div variants={letter}>T</motion.div>
-                            <motion.div variants={letter}>R</motion.div>
-                            <motion.div variants={letter}>E</motion.div>
-                            <motion.div variants={letter}>E</motion.div>
-                            <motion.div variants={letter}>T</motion.div>
+                            <motion.div variants={letter}>O</motion.div>
+                            <motion.div variants={letter}>D</motion.div>
                         </motion.h1>
                         <div className="overflow-hidden">
                             <motion.div initial={{ y: 250 }} animate={{ y: 0 }} exit={{ y: 250 }} transition={transition}>
@@ -103,7 +91,7 @@ const needForStreet = () => {
                                 exit={{ width: 512 }}
                                 transition={transition}
                             >
-                                <motion.img className="max-w-lg" src={images['banner.jpeg']} alt=""
+                                <motion.img className="max-w-lg" src={images['thatscool.jpeg']} alt=""
                                     initial="initial"
                                     animate={{ scale: 1.3 }}
                                     exit={{ scale: 1 }}
@@ -111,20 +99,18 @@ const needForStreet = () => {
                                 />
                             </motion.div>
 
-                            <motion.img className="max-w-lg ml-6" src={images['addthing.jpeg']} alt=""
+                            <motion.img className="max-w-lg ml-6" src={images['trod.jpeg']} alt=""
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={transition} />
                                 {}
-                            <img className="max-w-lg ml-6" src={images['concert.jpeg']} />
-                            <img className="max-w-lg ml-6" src={images['dj1-2.jpeg']} />
-                            <img className="max-w-lg ml-6" src={images['dj.jpeg']} />
-                            <img className="max-w-lg ml-6" src={images['hand.jpeg']} />
-                            <img className="max-w-lg ml-6" src={images['movie.jpeg']} />
-                            <img className="max-w-lg ml-6" src={images['speech.jpeg']} />
-                            <img className="max-w-lg ml-6" src={images['tattoo.jpeg']} />
-                            <img className="max-w-lg ml-6" src={images['tea.jpeg']} />
+                            <img className="max-w-lg ml-6" src={images['3dpainting.jpeg']} />
+                            <img className="max-w-lg ml-6" src={images['bondage.jpeg']} />
+                            <img className="max-w-lg ml-6" src={images['dog-painting.jpeg']} />
+                            <img className="max-w-lg ml-6" src={images['people.jpeg']} />
+                            <img className="max-w-lg ml-6" src={images['text.jpeg']} />
+                            <img className="max-w-lg ml-6" src={images['trod.jpeg']} />
                         </div>
                     </div>
                 </HorizontalScroll>
@@ -133,4 +119,4 @@ const needForStreet = () => {
     );
 }
 
-export default needForStreet;
+export default blood;

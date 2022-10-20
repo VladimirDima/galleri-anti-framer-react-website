@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import mock from '../assets/mock.jpeg';
-import mask from '../assets/mask.jpeg';
-import photo from '../assets/photo.jpeg';
-import web from '../assets/web.jpeg';
+import mock from '../assets/images/mock.jpeg';
+import mask from '../assets/images/mask.jpeg';
+import photo from '../assets/images/photo.jpeg';
+import web from '../assets/images/web.jpeg';
 
 import HorizontalScroll from "react-scroll-horizontal";
 
