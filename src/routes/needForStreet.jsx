@@ -1,10 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import mock from '../assets/images/mock.jpeg';
-import mask from '../assets/images/mask.jpeg';
-import photo from '../assets/images/photo.jpeg';
-import web from '../assets/images/web.jpeg';
 
 import HorizontalScroll from "react-scroll-horizontal";
 
@@ -33,7 +29,6 @@ const letter = {
 const importAll = (r) => {
     let images = {};
     r.keys().map(item => { images[item.replace('./', '')] = r(item); });
-    console.log(images);
     return images;
 }
 
