@@ -4,6 +4,53 @@ $yellow: yellow;
 $royalblue: royalblue;
 $magenta: magenta;
 
+@font-face {
+  font-family: 'Powderworks BRK';
+  src: url('/assets/fonts/powderworks/PowderworksBRK.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plasma Drip BRK';
+  src: url('/assets/fonts/plasmadrip/PlasmaDripBRK.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Generations';
+  src: url('/assets/fonts/generations/GenerationsPlain.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+.plastic-font-hover:hover {
+  font-family: 'Powderworks BRK';
+}
+
+.nfs-font-hover:hover {
+  font-family: 'Generations';
+}
+
+.blood-font-hover:hover {
+  font-family: 'Plasma Drip BRK';
+}
+
+.plastic-font {
+  font-family: 'Powderworks BRK';
+}
+
+.nfs-font {
+  font-family: 'Generations';
+}
+
+.blood-font {
+  font-family: 'Plasma Drip BRK';
+}
+
 .conti {
   height: 640px !important;
 }

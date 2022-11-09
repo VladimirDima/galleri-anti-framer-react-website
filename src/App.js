@@ -12,6 +12,7 @@ import Blood from './routes/blood';
 import About from './routes/about';
 import Home from './routes/home';
 import Contact from './routes/contact';
+import Header from './components/header';
 import { AnimatePresence } from 'framer-motion';
 
 import "./styles.scss"
@@ -20,6 +21,8 @@ const App = () => {
   const location = useLocation();
 
   return (
+    <>
+    <Header/>
     <AnimatePresence exitBeforeEnter initial={false}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
@@ -30,6 +33,7 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
       </Routes>
     </AnimatePresence >
+    </>
   );
 }
 

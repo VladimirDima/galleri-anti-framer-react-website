@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import './assets/fonts/generations/GenerationsPlain.woff2';
+import './assets/fonts/plasmadrip/PlasmaDripBRK.woff2';
+import './assets/fonts/powderworks/PowderworksBRK.woff2';
 
 ReactDOM.render(
   <BrowserRouter>

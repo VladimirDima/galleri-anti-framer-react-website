@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Powderworks BRK';
+    src: url('PowderworksBRK.woff2') format('woff2'),
+        url('PowderworksBRK.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Plasma Drip BRK';
+    src: url('PlasmaDripBRK.woff2') format('woff2'),
+        url('PlasmaDripBRK.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
